@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aaron Gilkey | MEMS Contact Card</title>
+  <meta name="description" content="Save contact information for Aaron Gilkey, Media Relations Coordinator at Metropolitan Emergency Medical Services.">
+  <meta property="og:title" content="Aaron Gilkey | Contact Card">
+  <meta property="og:description" content="Media Relations Coordinator at Metropolitan Emergency Medical Services">
+  <meta property="og:image" content="https://media.licdn.com/dms/image/v2/D5603AQGgoG05DItBsg/profile-displayphoto-crop_800_800/B56Z0lBRXqKYAI-/0/1774442585895?e=1781740800&v=beta&t=AtAN46pHLiXMak5pubyuu-VsouWsqfKEZH-wiLlUquY">
+  <meta property="og:type" content="profile">
+
+  <style>
+    :root {
+      --mems-blue: #005bea;
+      --mems-blue-dark: #0f2c52;
+      --mems-orange: #f47b26;
+      --ink: #17304f;
+      --muted: #6a7a92;
+      --bg: #eef3fa;
+      --card: #ffffff;
+      --line: #d7e1ef;
+      --soft: #f7faff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top, #dfe9fb 0%, #eef3fa 45%, #f8fbff 100%);
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 460px;
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.6);
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 22px 55px rgba(15, 44, 82, 0.14);
+    }
+
+    .hero {
+      position: relative;
+      background:
+        linear-gradient(140deg, rgba(0,91,234,0.98) 0%, rgba(15,44,82,0.98) 72%);
+      padding: 28px 28px 76px;
+      text-align: center;
+      color: #ffffff;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      top: -28px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(244,123,38,0.16);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      left: -60px;
+      bottom: -70px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .mems-tag {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.16);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .mems-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--mems-orange);
+      box-shadow: 0 0 0 3px rgba(244,123,38,0.22);
+    }
+
+    .headshot-wrap {
+      position: absolute;
+      left: 50%;
+      bottom: -54px;
+      transform: translateX(-50%);
+      z-index: 2;
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      padding: 5px;
+      background: #ffffff;
+      box-shadow: 0 14px 34px rgba(15, 44, 82, 0.22);
+    }
+
+    .headshot {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      background: #dbe6f5;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 1;
+      margin-top: 18px;
+    }
+
+    .hero-copy h1 {
+      margin: 16px 0 6px;
+      font-size: 30px;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-copy .title {
+      font-size: 15px;
+      line-height: 1.45;
+      opacity: 0.92;
+    }
+
+    .hero-copy .org {
+      margin-top: 8px;
+      font-size: 14px;
+      line-height: 1.45;
+      font-weight: 700;
+      color: #dbe8ff;
+    }
+
+    .content {
+      padding: 72px 24px 24px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 52px;
+      padding: 14px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .primary {
+      color: #fff;
+      background: linear-gradient(90deg, var(--mems-blue), #1d6df0);
+      box-shadow: 0 10px 22px rgba(0, 91, 234, 0.18);
+      margin-bottom: 18px;
+    }
+
+    .details {
+      display: grid;
+      gap: 10px;
+    }
+
+    .detail-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 14px 16px;
+      text-decoration: none;
+      color: inherit;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .detail-row:hover {
+      transform: translateY(-1px);
+      border-color: #c7d5ea;
+      box-shadow: 0 10px 18px rgba(15, 44, 82, 0.06);
+    }
+
+    .detail-copy {
+      min-width: 0;
+    }
+
+    .label {
+      display: block;
+      font-size: 11px;
+      line-height: 1;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 6px;
+    }
+
+    .value {
+      display: block;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.3;
+      word-break: break-word;
+    }
+
+    .phone {
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.01em;
+    }
+
+    .hint {
+      flex: 0 0 auto;
+      color: var(--mems-orange);
+      font-size: 18px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .footer {
+      padding: 16px 24px 22px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    @media (max-width: 460px) {
+      body {
+        padding: 12px;
+      }
+
+      .hero {
+        padding: 22px 20px 74px;
+      }
+
+      .content {
+        padding: 72px 18px 18px;
+      }
+
+      .footer {
+        padding: 14px 18px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="card" aria-label="Contact card for Aaron Gilkey">
+    <section class="hero">
+      <div class="mems-tag"><span class="mems-dot"></span>MEMS</div>
+
+      <div class="hero-copy">
+        <h1>Aaron Gilkey</h1>
+        <div class="title">Media Relations Coordinator</div>
+        <div class="org">Metropolitan Emergency Medical Services</div>
+      </div>
+
+      <div class="headshot-wrap">
+        <img class="headshot" src="https://media.licdn.com/dms/image/v2/D5603AQGgoG05DItBsg/profile-displayphoto-crop_800_800/B56Z0lBRXqKYAI-/0/1774442585895?e=1781740800&v=beta&t=AtAN46pHLiXMak5pubyuu-VsouWsqfKEZH-wiLlUquY" alt="Aaron Gilkey">
+      </div>
+    </section>
+
+    <section class="content">
+      <a class="button primary" href="aaron-gilkey.vcf">Save Contact</a>
+
+      <div class="details">
+        <a class="detail-row" href="tel:5014004617">
+          <div class="detail-copy">
+            <span class="label">Cell</span>
+            <span class="value phone">(501) 400-4617</span>
+          </div>
+          <span class="hint" aria-hidden="true">→</span>
+        </a>
+
+        <a class="detail-row" href="tel:5013011425">
+          <div class="detail-copy">
+            <span class="label">Office</span>
+            <span class="value phone">(501) 301-1425</span>
+          </div>
+          <span class="hint" aria-hidden="true">→</span>
+        </a>
+
+        <a class="detail-row" href="mailto:aaron.gilkey@metroems.org">
+          <div class="detail-copy">
+            <span class="label">Email</span>
+            <span class="value">aaron.gilkey@metroems.org</span>
+          </div>
+          <span class="hint" aria-hidden="true">→</span>
+        </a>
+
+        <a class="detail-row" href="https://metroems.org" target="_blank" rel="noopener">
+          <div class="detail-copy">
+            <span class="label">Website</span>
+            <span class="value">metroems.org</span>
+          </div>
+          <span class="hint" aria-hidden="true">→</span>
+        </a>
+
+        <a class="detail-row" href="https://www.linkedin.com/in/aarongilkey/" target="_blank" rel="noopener">
+          <div class="detail-copy">
+            <span class="label">LinkedIn</span>
+            <span class="value">linkedin.com/in/aarongilkey</span>
+          </div>
+          <span class="hint" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="footer">Metropolitan Emergency Medical Services</div>
+  </main>
+</body>
+</html>

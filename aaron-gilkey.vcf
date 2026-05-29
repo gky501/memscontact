@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Gilkey;Aaron;;;
+FN:Aaron Gilkey
+ORG:Metropolitan Emergency Medical Services
+TITLE:Media Relations Coordinator
+TEL;TYPE=CELL,VOICE:5014004617
+TEL;TYPE=WORK,VOICE:5013011425
+EMAIL;TYPE=INTERNET,WORK:aaron.gilkey@metroems.org
+URL;TYPE=WORK:https://metroems.org
+URL;TYPE=LinkedIn:https://www.linkedin.com/in/aarongilkey/
+PHOTO;VALUE=URI:https://media.licdn.com/dms/image/v2/D5603AQGgoG05DItBsg/profile-displayphoto-crop_800_800/B56Z0lBRXqKYAI-/0/1774442585895?e=1781740800&v=beta&t=AtAN46pHLiXMak5pubyuu-VsouWsqfKEZH-wiLlUquY
+END:VCARD
