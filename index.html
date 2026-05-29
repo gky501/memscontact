@@ -58,7 +58,7 @@
       overflow: visible;
       background: var(--mems-blue-dark);
       isolation: isolate;
-
+    }  
     .hero-video {
       position: absolute;
       inset: 0;
@@ -284,22 +284,24 @@
     }
 
     @media (max-width: 460px) {
-      body {
-        padding: 12px;
-      }
+  body {
+    padding: 12px;
+  }
 
-      .hero {
-        padding: 22px 20px 74px;
-      }
+  .hero {
+    padding: 22px 20px 84px;
+  }
 
-      .content {
-        padding: 72px 18px 18px;
-      }
+  .content {
+    padding: 74px 18px 18px;
+  }
 
-      .footer {
-        padding: 14px 18px 18px;
-      }
-      @media (prefers-reduced-motion: reduce) {
+  .footer {
+    padding: 14px 18px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
   .hero-video {
     display: none;
   }
