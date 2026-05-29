@@ -52,14 +52,44 @@
 
     .hero {
       position: relative;
-      background:
-        linear-gradient(140deg, rgba(0,91,234,0.98) 0%, rgba(15,44,82,0.98) 72%);
-      padding: 28px 28px 76px;
+      padding: 28px 28px 84px;
       text-align: center;
       color: #ffffff;
       overflow: visible;
+      background: var(--mems-blue-dark);
+      isolation: isolate;
+
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: -3;
+      background: var(--mems-blue-dark);
+    }
+    
+    .hero-video iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 177.78%;
+      height: 100%;
+      min-width: 100%;
+      min-height: 177.78%;
+      transform: translate(-50%, -50%);
+      border: 0;
+      pointer-events: none;
     }
 
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(
+    140deg,
+    rgba(0, 91, 234, 0.84) 0%,
+    rgba(15, 44, 82, 0.92) 72%
+  );
+}
     .hero::after {
       content: "";
       position: absolute;
@@ -269,6 +299,11 @@
       .footer {
         padding: 14px 18px 18px;
       }
+      @media (prefers-reduced-motion: reduce) {
+  .hero-video {
+    display: none;
+  }
+}
     }
   </style>
 </head>
